@@ -11,4 +11,4 @@ SOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 xauth nlist $DISPLAY | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
 
-docker run -it --net=host --ipc=host --privileged -v $HOME:$HOME -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e DISPLAY=$DISPLAY --user=$(id -u):$(id -g) --group-add $GID_VIDEO --group-add $GID_RENDER --shm-size=4G stargate01/matlab:r2023a-iris /home/matlab/entrypoint.sh "$@"
+docker run -it --net=host --ipc=host --privileged -v $HOME:$HOME -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e DISPLAY=$DISPLAY --user=$(id -u):$(id -g) --group-add $GID_VIDEO --group-add $GID_RENDER --shm-size=4G stargate01/matlab:r2023a-iris bash -c "matlab ; bash"

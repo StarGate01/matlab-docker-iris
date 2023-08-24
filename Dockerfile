@@ -16,6 +16,5 @@ RUN mkdir -p /opt/matlab && \
 COPY ./drirc /home/matlab/.drirc
 COPY ./drirc /etc/drirc
 COPY ./java.opts /opt/matlab/R2023a/bin/glnxa64/java.opts
-COPY ./entrypoint.sh /home/matlab/entrypoint.sh
 
 USER matlab
