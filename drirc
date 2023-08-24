@@ -1,0 +1,4 @@
+<driconf>
+   <device screen="0" driver="iris"> 
+   </device>
+</driconf>
